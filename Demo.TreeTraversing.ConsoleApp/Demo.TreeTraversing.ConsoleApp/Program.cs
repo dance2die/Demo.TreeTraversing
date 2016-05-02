@@ -8,27 +8,27 @@ namespace Demo.TreeTraversing.ConsoleApp
 		{
 			Node rootNode = BuildCompleteTree();
 
-			//VisitPreOrder(rootNode);
-			//ProcessInOrder(rootNode);
-			ProcessPostOrder(rootNode);
+			VisitPreOrder(rootNode);
+			VisitInOrder(rootNode);
+			VisitPostOrder(rootNode);
 		}
 
-		private static void ProcessPostOrder(Node currentNode)
+		private static void VisitPostOrder(Node currentNode)
 		{
 			if (currentNode == null) return;
 
-			ProcessPostOrder(currentNode.Left);
-			ProcessPostOrder(currentNode.Right);
+			VisitPostOrder(currentNode.Left);
+			VisitPostOrder(currentNode.Right);
 			Process(currentNode.Value);
 		}
 
-		private static void ProcessInOrder(Node currentNode)
+		private static void VisitInOrder(Node currentNode)
 		{
 			if (currentNode == null) return;
 
-			ProcessInOrder(currentNode.Left);
+			VisitInOrder(currentNode.Left);
 			Process(currentNode.Value);
-			ProcessInOrder(currentNode.Right);
+			VisitInOrder(currentNode.Right);
 		}
 
 		private static void VisitPreOrder(Node currentNode)
