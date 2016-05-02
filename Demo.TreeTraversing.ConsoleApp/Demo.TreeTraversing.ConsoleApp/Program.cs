@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Demo.TreeTraversing.ConsoleApp
 {
@@ -12,9 +8,18 @@ namespace Demo.TreeTraversing.ConsoleApp
 		{
 			Node rootNode = BuildCompleteTree();
 
-			VisitPreOrder(rootNode);
-			//ProcessInOrder(rootNode);
+			//VisitPreOrder(rootNode);
+			ProcessInOrder(rootNode);
 			//ProcessPostOrder(rootNode);
+		}
+
+		private static void ProcessInOrder(Node currentNode)
+		{
+			if (currentNode == null) return;
+
+			ProcessInOrder(currentNode.Left);
+			Process(currentNode.Value);
+			ProcessInOrder(currentNode.Right);
 		}
 
 		private static void VisitPreOrder(Node currentNode)
