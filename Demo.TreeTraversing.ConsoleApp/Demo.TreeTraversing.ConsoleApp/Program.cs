@@ -8,9 +8,21 @@ namespace Demo.TreeTraversing.ConsoleApp
 		{
 			Node rootNode = BuildCompleteTree();
 
+			var divider = new String('=', 30);
+			Console.WriteLine(divider);
+			Console.WriteLine("Pre-Order Traversing");
 			VisitPreOrder(rootNode);
+			Console.WriteLine("\n");
+
+			Console.WriteLine(divider);
+			Console.WriteLine("In-Order Traversing");
 			VisitInOrder(rootNode);
+			Console.WriteLine("\n");
+
+			Console.WriteLine(divider);
+			Console.WriteLine("Post-Order Traversing");
 			VisitPostOrder(rootNode);
+			Console.WriteLine("\n");
 		}
 
 		private static void VisitPostOrder(Node currentNode)
